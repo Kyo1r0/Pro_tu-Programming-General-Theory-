@@ -22,6 +22,11 @@ gcc stack_main_1.c stack-list\ \(1\).c -o stack
 
 
 ##　コード
+
+<details><summary>すごく長い文章とかプログラムとか</summary>
+
+
+
 ### スタック
 
 
@@ -191,5 +196,59 @@ elementtype dequeue(struct queue *q){
   }
 }
 
+
+```
+
+
+</details>
+
+
+### 例題
+
+複製
+```
+gcc reidai_fukusei.c reidai.c -o reidai_fukusei
+```
+
+逆転
+```
+gcc reidai_gyakuten.c reidai.c -o reidai_gyakuten
+```
+
+探索
+```
+gcc reidai_tansaku.c reidai.c -o reidai_tansaku
+```
+
+### 実行結果
+
+
+ポイントは芋づる式に出てくることdstで初期化しているので```return dst```をすることでそれに繋がっているものが全て出てくる
+
+```
+
+ ./reidai_fukusei 
+Original list   : a->b->c
+Copied list     : a->b->c
+
+--- Inserting 'x' into ORIGINAL list ---
+Original list   : x->a->b->c
+Copied list     : a->b->c
+
+
+./reidai_gyakuten 
+--- Testing reverse() ---
+Original list1  : a->b->c
+Reversed list1  : c->b->a
+Original list1 after reverse()  : 
+
+--- Testing reverse2() ---
+Original list2  : x->y->z
+Reversed list2  : z->y->x
+
+./reidai_tansaku 
+Original list: a->b->c
+Element 'b' was found.
+Element 'z' was NOT found.
 
 ```

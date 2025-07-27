@@ -1,16 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "list.h"
 
 #define MAXLENGTH 1000
 
 typedef int elementtype;
 
 typedef int position;
-struct list {
-  elementtype elements[MAXLENGTH];
-  position last;
-};
+
 typedef struct list * list;
+
 
 list initlist(void){
   list p;
@@ -79,16 +76,4 @@ void printlist(list l){
   printf("\n");
 }
 
-int main(void){
-  list l;
 
-  l = initlist();
-
-  insert(l, first(l), 0);
-  insert(l, end(l), 1);
-  insert(l, end(l), 2);
-
-  printlist(l);
-
-  return 0;
-}
